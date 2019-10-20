@@ -1,6 +1,6 @@
 
 class pdhtml():
-    def __init__(self,df,index=0):
+    def __init__(self,df,index=0,footer_show=1):
         self.index=index
         self.head = '''<!Doctype html>
 <html xmlns=http://www.w3.org/1999/xhtml>
@@ -39,6 +39,8 @@ class pdhtml():
 </body>
 </html>
             '''
+        if footer_show == 0:
+            self.footer =''
 
         self.table = df.to_html(index=self.index)
 
